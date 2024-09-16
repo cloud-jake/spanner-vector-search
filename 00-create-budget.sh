@@ -1,8 +1,6 @@
 #!/bin/bash
 
-PROJECT_ID=`gcloud config get-value project`
-BILLING_ACCOUNT=`gcloud billing projects describe $PROJECT_ID --format='value(billingAccountName)' | sed 's/^billingAccounts\///'`
-#USER_EMAIL=`gcloud config get account`
+source variables.inc
 
 gcloud services enable billingbudgets.googleapis.com --project=$PROJECT_ID
 
